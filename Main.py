@@ -2,7 +2,7 @@ import pickle
 import os
 from flask import Flask, request
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route('/process',methods = ['POST'])
 def process():
@@ -18,7 +18,7 @@ def process():
 
     return (f"The predicted value is :{a[0]}")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  
     print(f"? Flask server is starting on http://0.0.0.0:{port} ...")
     app.run(host="0.0.0.0", port=port)
